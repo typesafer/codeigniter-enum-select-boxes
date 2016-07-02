@@ -1,11 +1,16 @@
   <select>
   <?php 
-  $array = array_values($enm);
-  $pos = array_search($mydata['student_gender'], $array);
-  unset($array[$pos]);
-  foreach ($array as $v1) {
-  echo "<option>" .$v1."</option>";
-  }		
+    $array = array_values($enm); 
+      foreach ($array as $v1)
+      {
+          if($v1 == $mydata['student_gender'])
+          {
+              echo "<option selected>" .$v1."</option>";
+          }
+          else
+          {
+              echo "<option>" .$v1."</option>";
+          }
+      }
   ?>
-  <?php echo  "<option selected>" .$mydata['student_gender']."</option>";?>
   </select>
